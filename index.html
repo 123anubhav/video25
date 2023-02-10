@@ -1,6 +1,12 @@
 
 
 
+
+
+
+
+
+
 <!DOCTYPE html>
 <html  lang="en">
   <head>
@@ -8,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="WebsiteProvide-KrishnaJaiKumar">
-    <title>The Video 25...</title>
+    <title>The Video 23...</title>
     
 	
   </head>
@@ -125,7 +131,7 @@ Your browser does not support the video tag.
 		if(video.duration) {
 			const distanceFromTop = window.scrollY + bound.getBoundingClientRect().top;
 			const rawPercentScrolled = (window.scrollY - distanceFromTop) / (bound.scrollHeight - window.innerHeight);
-			const percentScrolled = Math.min(Math.max(rawPercentScrolled, 0), 0.1);
+			const percentScrolled = Math.min(Math.max(rawPercentScrolled, 0), 1);
 			
 			video.currentTime = video.duration * percentScrolled;
 		}
