@@ -7,6 +7,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html  lang="en">
   <head>
@@ -131,7 +132,7 @@ Your browser does not support the video tag.
 		if(video.duration) {
 			const distanceFromTop = window.scrollY + bound.getBoundingClientRect().top;
 			const rawPercentScrolled = (window.scrollY - distanceFromTop) / (bound.scrollHeight - window.innerHeight);
-			const percentScrolled = Math.min(Math.max(rawPercentScrolled, 0), 2);
+			const percentScrolled = Math.min(Math.max(rawPercentScrolled, 0), 0.1);
 			
 			video.currentTime = video.duration * percentScrolled;
 		}
@@ -139,12 +140,12 @@ Your browser does not support the video tag.
 	}
 	requestAnimationFrame(scrollVideo);
     document.addEventListener("touchmove", function(event) {
-        if (event.touches[0].clientY > window.innerHeight / 2) {
+        if (event.touches[0].clientY > window.innerHeight / 1) {
         //  video.playbackRate += 0.25;   // Orignal
-          video.playbackRate += 5;
+          video.playbackRate += 0.1;
         } else {  
          // video.playbackRate -= 0.25;  // Original  
-          video.playbackRate -= 5;
+          video.playbackRate -= 0.1;
         }
       });
 }
